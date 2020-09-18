@@ -243,9 +243,28 @@ h1,h2,h3,h4,h5,h6{
 .about {
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .about_item {
-    width: 30%;
+    background-color: #95e1d3;
+    margin: 0 15px;
+}
+
+.about_item:hover .about_image {
+    transform: translate3d(-10px, -10px, 0);
+}
+
+.about_item:hover .about_image img {
+    opacity: .3;
+}
+
+.about_image {
+    background: linear-gradient(to bottom, #f38181, #fce38a);
+    transition: transform .1s linear;
+}
+
+.about_image img {
+    transition: opacity .1s linear;
+    display: block;
 }
