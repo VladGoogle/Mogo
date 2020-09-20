@@ -24,7 +24,7 @@ body
 }
 
 .container {
-    widows: 100px;
+    widows: 100;
     max-width: 1200px;
     margin: 0 auto;
 
@@ -319,9 +319,9 @@ h1,h2,h3,h4,h5,h6{
     border-right: 1px solid #b5eae0 ;
 }
 
-.stat_count {
-    font-size: ;
-}
+/*.stat_count {*/
+/*    font-size: ;*/
+/*}*/
 
 .stat_count {
     font-size: 72px;
