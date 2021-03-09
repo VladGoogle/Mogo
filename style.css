@@ -7,6 +7,12 @@ body
     color: #333;
 
 }
+
+:root{
+    --transformArrow_1: 135deg;
+    --transformArrow_2: 135deg;
+    --transformArrow_3: 135deg;
+}
 *,
 *:before, 
 *:after {
@@ -444,16 +450,16 @@ h1,h2,h3,h4,h5,h6{
     border: 1px solid transparent;
 }
 
-.accordion_item.active 
+/*.accordion_item.active 
 .accordion_content {
     display: block;
-}
+}*/
 
-.accordion_item.active 
+/*.accordion_item.active 
 .accordion_header:after {
     transform: translateY(-50%) rotate(-45deg);
     margin-top: 5px;
-}
+}*/
 
 .accordion_header {
     border: 1px solid #e5e5e5;
@@ -462,7 +468,7 @@ h1,h2,h3,h4,h5,h6{
     cursor: pointer;
 }
 
-.accordion_header:after{
+/*.accordion_header:after{
     content: "";
     display: block;
     width: 16px;
@@ -473,12 +479,59 @@ h1,h2,h3,h4,h5,h6{
     top: 50%;
     right: 20px;
     z-index: 1;
-    transform: translateY(-50%) rotate(135deg);
+    transform: translateY(-50%) rotate(var(--transformArrow));
 
 
+}*/
+
+#header_1:after
+{
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-top: 2px solid #ccc;
+    border-right: 2px solid #ccc;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    z-index: 1;
+    transform: translateY(-50%) rotate(var(--transformArrow_1));
 }
+
+#header_2:after
+{
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-top: 2px solid #ccc;
+    border-right: 2px solid #ccc;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    z-index: 1;
+    transform: translateY(-50%) rotate(var(--transformArrow_2));
+}
+
+#header_3:after
+{
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-top: 2px solid #ccc;
+    border-right: 2px solid #ccc;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    z-index: 1;
+    transform: translateY(-50%) rotate(var(--transformArrow_3));
+}
+
 .wedo_item--accord {
     margin-left: 32px;
+    width:100%
 }
 
 .accordion_content {
@@ -510,10 +563,19 @@ h1,h2,h3,h4,h5,h6{
     position: relative;
 }
 
-.reviews_item {
+.reviews_item_first {
     padding-left: 255px;
     position: relative;
 }
+
+.reviews_item {
+    display: none;
+}
+
+.sim_slider_list{
+    list-style-type: none;
+}
+
 
 .reviews_photo {
     position: absolute;
@@ -546,34 +608,39 @@ h1,h2,h3,h4,h5,h6{
     background-color: #f38181;
 }
 
-.reviews_btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1;
-    font-size: 0;
-    color: transparent;
+div.sim-slider-arrow-left,
+div.sim-slider-arrow-right {
+  width: 22px;
+  height: 40px;
+  position: absolute;
+  cursor: pointer;
+  opacity: 0.6;
+  z-index: 4;
 }
 
-.reviews_btn:after {
-    content: "";
-    display: block;
-    width: 16px;
-    height: 16px;
-    border-top: 2px solid #333;
-    border-left: 2px solid #333;
-
+div.sim-slider-arrow-left {
+  left: 10px;
+  top: 40%;
+  display: block;
+  background: url("http://pvbk.spb.ru/inc/slider/sim-files/sim-arrow-left.png") no-repeat;
 }
 
-.reviews_btn--prev {
-    left: 0;
-    transform:  rotate(-45deg);
+div.sim-slider-arrow-right {
+  right: 10px;
+  top: 40%;
+  display: block;
+  background: url("http://pvbk.spb.ru/inc/slider/sim-files/sim-arrow-right.png") no-repeat;
 }
 
-.reviews_btn--next {
-    right: 0;
-    transform:  rotate(135deg);
+div.sim-slider-arrow-left:hover {
+  opacity: 1.0;
 }
+
+div.sim-slider-arrow-right:hover {
+  opacity: 1.0;
+}
+
+
 
 .social {
     display: flex;
